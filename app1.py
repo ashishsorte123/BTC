@@ -31,6 +31,7 @@ def upload():
     if request.method == 'POST':
         # Get the file from post request
         f = request.files['file']
+
         file_path = secure_filename(f.filename)
         f.save(file_path)
         # Make prediction
@@ -50,4 +51,4 @@ def upload():
     return None
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
